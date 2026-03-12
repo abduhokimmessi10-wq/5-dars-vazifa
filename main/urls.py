@@ -5,9 +5,9 @@ from .views import StudentListAPIView,CourseDetailAPIView,EnrollmentListAPIView
 
 router = DefaultRouter()
 router.register('course', CourseDetailAPIView,basename='course')
+router.register('student', CourseDetailAPIView,basename='student')
 
 urlpatterns = [
-    path('student/', StudentListAPIView.as_view(), name='student-list'),
     path('enrollment/', EnrollmentListAPIView.as_view(), name='enrollment-list'),
     path('', include(router.urls)),
 ]
